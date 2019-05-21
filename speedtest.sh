@@ -1,5 +1,5 @@
 rm -rf __pycache__
-python pi.py
-python pi-decimal.py
-python3 pi.py
-python3 pi-decimal.py
+python python/pi.py
+python python/pi-decimal.py
+python3 python/pi.py
+python3 python/pi-decimal.py
