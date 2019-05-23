@@ -11,9 +11,10 @@ $sigma=0.0;
 $pi=0.0;
 $piconstant=3.14159265358979323846;
 $digits=5;
+$constant=10**$digits;
 $time_start = microtime_float();
 
-while((int)($pi*10**$digits+0.5)!=(int)($piconstant*10**$digits+0.5)){
+while((int)($pi*$constant+0.5)!=(int)($piconstant*$constant+0.5)){
     $sigma = $sigma + 1/($n*$n);
     $pi = sqrt(6.0 * $sigma);
     $n=$n+1;
