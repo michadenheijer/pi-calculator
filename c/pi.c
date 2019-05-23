@@ -1,23 +1,38 @@
 #include<stdio.h>
 #include<math.h>
+#include<time.h>
 
-int n = 1;
-double sigma = 0;
+clock_t start, end;
+double cpu_time_used;
 
-void changeSigma(double newSigma){
-    sigma=newSigma;
+int rounding(double x){
+   if (x < 0.0)
+     return (int)(x - 0.5);
+   else
+     return (int)(x + 0.5);
+}
+
+double calculate_pi(double digits){
+  double i = 1;
+  double s = 0.0;
+  double pi = 0.0;
+  double actual_pi = 3.14159265358979323846;
+  int stop_number = (int) floor(actual_pi * pow(10, digits));
+  double sig = pow(10, digits);
+  start = clock();
+  while(rounding(pi*sig) != stop_number){
+    s = s + 1/(i*i);
+    i++;
+    pi = sqrt(6.0 * s);
+  }
+  end = clock();
+  cpu_time_used = ((double) (end - start))/CLOCKS_PER_SEC;
+  printf("Calculated Pi correctly up to %.f digits in %f seconds using C\n", digits, cpu_time_used);
+  return 0;
 }
 
 int main(){
-    double in_square_root;
-    double sigma = 0;
-    double pi = 0;
-    while(1){
-        sigma = sigma + 1/(n*n);
-        changeSigma(sigma);
-        pi = sqrt(6.0 * sigma);
-        printf("%lf\n", sigma);
-        n++;
-    }
-    return 0;
+  calculate_pi(5);
+  return 0;
 }
+

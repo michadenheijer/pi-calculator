@@ -11,7 +11,7 @@ def main():
     multiply=10**digits
     equal=int(math.pi*(10**digits))
     while int(pi*multiply+0.5) != equal:
-        sigma = sigma+(1/math.pow(n, 2))
+        sigma = sigma+(1/(math.pow(n, 2)))
         pi = math.sqrt(6*sigma)
         n+=1
     now=time.time()
