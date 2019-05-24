@@ -21,7 +21,7 @@ while((int)($pi*$constant+0.5)!=(int)($piconstant*$constant+0.5)){
 }
 
 $time_end = microtime_float();
-$time = $time_end - $time_start;
+$time = number_format($time_end - $time_start, 4);
 $version = phpversion();
-print "Calculated Pi correctly up to $digits digits in $time seconds using PHP $version\n";
+print "PHP $version: $time\n";
 ?>

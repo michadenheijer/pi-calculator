@@ -27,7 +27,7 @@ double calculate_pi(double digits){
   }
   end = clock();
   cpu_time_used = ((double) (end - start))/CLOCKS_PER_SEC;
-  printf("Calculated Pi correctly up to %.f digits in %f seconds using C\n", digits, cpu_time_used);
+  printf("C: %.4f\n", cpu_time_used);
   return 0;
 }
 

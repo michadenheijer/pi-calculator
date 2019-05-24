@@ -18,4 +18,4 @@ while(int($pi*$constant+0.5)!=$equal){
 }
 
 my $end = Time::HiRes::gettimeofday();
-printf("Calculated Pi correctly up to %.f digits in %.8f seconds using Perl %s\n", $digits, $end - $start, $^V);
+printf("Perl %s: %.4f\n", $^V, $end - $start);

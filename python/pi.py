@@ -15,7 +15,7 @@ def main():
         pi = math.sqrt(6*sigma)
         n+=1
     now=time.time()
-    print("Calculated Pi correctly up to {} digits in: {} seconds using floats and Python {}".format(digits, now-start, platform.python_version()))
+    print("Python {} floats: {:.4f}".format(platform.python_version(), now-start))
 
 if __name__ == "__main__":
     main()
