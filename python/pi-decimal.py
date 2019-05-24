@@ -1,7 +1,7 @@
 from decimal import Decimal
 import math
 import time
-import platfrom
+import platform
 
 def main():
     start=time.time()
