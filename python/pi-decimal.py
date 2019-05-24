@@ -1,7 +1,7 @@
 from decimal import Decimal
 import math
 import time
-import sys
+import platfrom
 
 def main():
     start=time.time()
@@ -16,7 +16,7 @@ def main():
         pi = (Decimal("6")*sigma).sqrt()
         n+=1
     now=time.time()
-    print("Calculated Pi correctly up to {} digits in: {} seconds using Decimal and Python {}".format(digits, now-start, sys.version))
+    print("Calculated Pi correctly up to {} digits in: {} seconds using Decimal and Python {}".format(digits, now-start, platform.python_version()))
 
 if __name__ == "__main__":
     main()

@@ -1,6 +1,6 @@
 import math
 import time
-import sys
+import platform
 
 def main():
     start=time.time()
@@ -15,7 +15,7 @@ def main():
         pi = math.sqrt(6*sigma)
         n+=1
     now=time.time()
-    print("Calculated Pi correctly up to {} digits in: {} seconds using floats and Python {}".format(digits, now-start, sys.version))
+    print("Calculated Pi correctly up to {} digits in: {} seconds using floats and Python {}".format(digits, now-start, platform.python_version()))
 
 if __name__ == "__main__":
     main()
