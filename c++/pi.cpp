@@ -26,6 +26,6 @@ int main(){
   high_resolution_clock::time_point t2 = high_resolution_clock::now();
   auto duration = (duration_cast<microseconds>( t2 - t1 ).count());
   double seconds = (double) duration/1000000;
-  cout << setprecision(4) << "C++: " << seconds << endl;
+  cout << setprecision(4) << seconds << endl;
   return 0;
 }

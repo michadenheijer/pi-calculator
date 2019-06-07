@@ -27,7 +27,7 @@ double calculate_pi(double digits){
   }
   end = clock();
   cpu_time_used = ((double) (end - start))/CLOCKS_PER_SEC;
-  printf("C double: %.4f\n", cpu_time_used);
+  printf("%.4f\n", cpu_time_used);
   return 0;
 }
 

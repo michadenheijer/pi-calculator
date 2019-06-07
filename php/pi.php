@@ -23,5 +23,5 @@ while((int)($pi*$constant+0.5)!=(int)($piconstant*$constant+0.5)){
 $time_end = microtime_float();
 $time = number_format($time_end - $time_start, 4);
 $version = phpversion();
-print "PHP $version: $time\n";
+print "$time";
 ?>

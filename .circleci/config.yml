@@ -34,12 +34,6 @@ jobs:
     steps:
       - checkout
       - run: php php/pi.php
-  run-php6:
-    docker:
-      - image: circleci/php:6
-    steps:
-      - checkout
-      - run: php php/pi.php
   run-php7:
     docker:
       - image: circleci/php:7
@@ -56,5 +50,4 @@ workflows:
       - run-python37
       - run-python38 
       - run-php5
-      - run-php6
       - run-php7
