@@ -16,34 +16,50 @@ jobs:
       - image: circleci/python:3.6
     steps:
       - checkout
-      - run: python python/pi.py > python3.6-pi.txt
-      - run: python python/pi-decimal.py > python3.6-pi-decimal.txt
+      - run: python python/pi.py > /tmp/python3.6-pi.txt
+      - run: python python/pi-decimal.py > /tmp/python3.6-pi-decimal.txt
+      - store_artifacts:
+          path: /tmp/python3.6-pi.txt
+      - store_artifacts:
+          path: /tmp/python3.6-pi-decimal.txt
   run-python37:
     docker:
       - image: circleci/python:3.7
     steps:
       - checkout
-      - run: python python/pi.py > python3.7-pi.txt
-      - run: python python/pi-decimal.py > python3.7-pi-decimal.txt
+      - run: python python/pi.py > /tmp/python3.7-pi.txt
+      - run: python python/pi-decimal.py > /tmp/python3.7-pi-decimal.txt
+      - store_artifacts:
+          path: /tmp/python3.7-pi.txt
+      - store_artifacts:
+          path: /tmp/python3.7-pi-decimal.txt
   run-python38:
     docker:
       - image: circleci/python:3.8-rc
     steps:
       - checkout
-      - run: python python/pi.py > python3.8-pi.txt
-      - run: python python/pi-decimal.py > python3.8-pi-decimal.txt
+      - run: python python/pi.py > /tmp/python3.8-pi.txt
+      - run: python python/pi-decimal.py > /tmp/python3.8-pi-decimal.txt
+      - store_artifacts:
+          path: /tmp/python3.8-pi.txt
+      - store_artifacts:
+          path: /tmp/python3.8-pi-decimal.txt
   run-php5:
     docker:
       - image: circleci/php:5
     steps:
       - checkout
-      - run: php php/pi.php > php5-pi.txt
+      - run: php php/pi.php > /tmp/php5-pi.txt
+      - store_artifacts:
+          path: /tmp/php5-pi.txt
   run-php7:
     docker:
       - image: circleci/php:7
     steps:
       - checkout
-      - run: php php/pi.php > php7-pi.txt
+      - run: php php/pi.php > /tmp/php7-pi.txt
+      - store_artifacts:
+          path: /tmp/php7-pi.txt
 
 workflows:
   version: 2.1
