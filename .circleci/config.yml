@@ -7,9 +7,9 @@ jobs:
       - checkout
       - run: python python/pi.py > /tmp/python2.7-pi.txt
       - run: python python/pi-decimal.py > /tmp/python2.7-pi-decimal.txt
-      - store_test_results:
+      - store_artifacts:
           path: /tmp/python2.7-pi.txt
-      - store_test_results:
+      - store_artifacts:
           path: /tmp/python2.7-pi-decimal.txt
   run-python36:
     docker:
@@ -18,9 +18,9 @@ jobs:
       - checkout
       - run: python python/pi.py > /tmp/python3.6-pi.txt
       - run: python python/pi-decimal.py > /tmp/python3.6-pi-decimal.txt
-      - store_test_results:
+      - store_artifacts:
           path: /tmp/python3.6-pi.txt
-      - store_test_results:
+      - store_artifacts:
           path: /tmp/python3.6-pi-decimal.txt
   run-python37:
     docker:
@@ -29,9 +29,9 @@ jobs:
       - checkout
       - run: python python/pi.py > /tmp/python3.7-pi.txt
       - run: python python/pi-decimal.py > /tmp/python3.7-pi-decimal.txt
-      - store_test_results:
+      - store_artifacts:
           path: /tmp/python3.7-pi.txt
-      - store_test_results:
+      - store_artifacts:
           path: /tmp/python3.7-pi-decimal.txt
   run-python38:
     docker:
@@ -40,9 +40,9 @@ jobs:
       - checkout
       - run: python python/pi.py > /tmp/python3.8-pi.txt
       - run: python python/pi-decimal.py > /tmp/python3.8-pi-decimal.txt
-      - store_test_results:
+      - store_artifacts:
           path: /tmp/python3.8-pi.txt
-      - store_test_results:
+      - store_artifacts:
           path: /tmp/python3.8-pi-decimal.txt
   run-php5:
     docker:
@@ -50,7 +50,7 @@ jobs:
     steps:
       - checkout
       - run: php php/pi.php > /tmp/php5-pi.txt
-      - store_test_results:
+      - store_artifacts:
           path: /tmp/php5-pi.txt
   run-php7:
     docker:
@@ -58,7 +58,7 @@ jobs:
     steps:
       - checkout
       - run: php php/pi.php > /tmp/php7-pi.txt
-      - store_test_results:
+      - store_artifacts:
           path: /tmp/php7-pi.txt
 
 workflows:
