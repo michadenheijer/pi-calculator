@@ -4,6 +4,8 @@ jobs:
     docker:
       - image: circleci/python:3.7
     steps:
+      - checkout
       - run:
-        command: |
-          pipenv run python python/pi.py
+          name: Run calculator
+          command: |
+            python3 python/pi.py
