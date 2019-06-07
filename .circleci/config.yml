@@ -28,6 +28,24 @@ jobs:
       - checkout
       - run: python python/pi.py
       - run: python python/pi-decimal.py
+  run-php5:
+    docker:
+      - image: circleci/php:5
+    steps:
+      - checkout
+      - run: php php/pi.php
+  run-php6:
+    docker:
+      - image: circleci/php:6
+    steps:
+      - checkout
+      - run: php php/pi.php
+  run-php7:
+    docker:
+      - image: circleci/php:7
+    steps:
+      - checkout
+      - run: php php/pi.php
 
 workflows:
   version: 2.1
@@ -37,3 +55,6 @@ workflows:
       - run-python36
       - run-python37
       - run-python38 
+      - run-php5
+      - run-php6
+      - run-php7
