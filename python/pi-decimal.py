@@ -16,7 +16,7 @@ def main():
         pi = (Decimal("6")*sigma).sqrt()
         n+=1
     now=time.time()
-    print("{.4f}".format(now-start))
+    print("{:.4f}".format(now-start))
 
 if __name__ == "__main__":
     main()
