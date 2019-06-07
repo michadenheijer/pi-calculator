@@ -10,22 +10,22 @@ jobs:
   run-python36:
     docker:
       - image: circleci/python:3.6
-    working_directory: ~/
     steps:
+      - checkout
       - run: python python/pi.py
       - run: python python/pi-decimal.py
   run-python37:
     docker:
       - image: circleci/python:3.7
-    working_directory: ~/
     steps:
+      - checkout
       - run: python python/pi.py
       - run: python python/pi-decimal.py
   run-python38:
     docker:
       - image: circleci/python:3.8
-    working_directory: ~/
     steps:
+      - checkout
       - run: python python/pi.py
       - run: python python/pi-decimal.py
 
@@ -34,6 +34,6 @@ workflows:
   build:
     jobs:
       - run-python27
-     #- run-python36
-     #- run-python37
-     #- run-python38 
+      - run-python36
+      - run-python37
+      - run-python38 
