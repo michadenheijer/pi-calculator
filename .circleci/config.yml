@@ -1,13 +1,35 @@
 version: 2.1
 jobs:
-  build:
+  run-python27:
     docker:
       - image: circleci/python:2.7
+    steps:
+      - run: python python/pi.py
+      - run: python python/pi-decimal.py
+  run-python36:
+    docker:
+      - image: circleci/python:3.6
+    steps:
+      - run: python python/pi.py
+      - run: python python/pi-decimal.py
+  run-python37:
+    docker:
       - image: circleci/python:3.7
     steps:
-      - checkout
-      - run:
-          name: Run calculator
-          command: |
-            python python/pi.py
-            python3 python/pi.py
+      - run: python python/pi.py
+      - run: python python/pi-decimal.py
+  run-python38:
+    docker:
+      - image: circleci/python:3.8
+    steps:
+      - run: python python/pi.py
+      - run: python python/pi-decimal.py
+
+workflows:
+  version: 2.1
+  build:
+    jobs:
+      - run-python27
+      - run-python36
+      - run-python37
+      - run-python38  
