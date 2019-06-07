@@ -3,8 +3,8 @@ jobs:
   run-python27:
     docker:
       - image: circleci/python:2.7
-    working_directory: ~/pi-calculator
     steps:
+      - checkout
       - run: python python/pi.py
       - run: python python/pi-decimal.py
   run-python36:
